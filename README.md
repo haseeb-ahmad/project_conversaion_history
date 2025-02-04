@@ -1,24 +1,26 @@
-# README
+# Project Conversations History
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is a Ruby on Rails application designed to manage project conversations and history.
 
-Things you may want to cover:
+## Prerequisites
 
-* Ruby version
+- Ruby version: `3.4.1`
+- PostgreSQL
 
-* System dependencies
+## System Dependencies
 
-* Configuration
+- curl
+- libjemalloc2
+- libvips
+- postgresql-client
 
-* Database creation
+## Configuration
 
-* Database initialization
+To configure the database, run the following command:
+```bin/rails db:create
 
-* How to run the test suite
+```bin/rails db:migrate
 
-* Services (job queues, cache servers, search engines, etc.)
+```rails assets:precompile
 
-* Deployment instructions
-
-* ...
+```rails s
