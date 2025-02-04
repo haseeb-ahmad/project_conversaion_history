@@ -1,0 +1,21 @@
+<ul class="space-y-4">
+  <% comments.each do |comment| %>
+    <li class="p-4 bg-gray-50 border-l-4 border-blue-500 rounded-lg shadow-md">
+      <p class="text-sm text-gray-700">
+        <strong class="text-blue-600"><%= comment.user.email %>:</strong>
+        <%= comment.comment %>
+      </p>
+
+      <div class="mt-2">
+        <%= link_to "Reply", new_project_comment_path(project_id: comment.commentable.id, commentable_id: commentable.id, parent_id: comment.id),
+              class: "text-sm text-blue-500 hover:underline" %>
+      </div>
+
+      <% if comment.children.any? %>
+        <div class="ml-6 border-l-2 border-gray-300 pl-4 mt-4">
+          <%= render partial: "comments/thread", locals: { commentable: commentable, comments: comment.children } %>
+        </div>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
