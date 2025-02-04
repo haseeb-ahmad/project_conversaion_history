@@ -17,10 +17,10 @@ This project is a Ruby on Rails application designed to manage project conversat
 ## Configuration
 
 To configure the database, run the following command:
-```bin/rails db:create
+bin/rails db:create
 
-```bin/rails db:migrate
+bin/rails db:migrate
 
-```rails assets:precompile
+rails assets:precompile
 
-```rails s
+rails s
