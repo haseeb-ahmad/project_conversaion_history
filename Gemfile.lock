@@ -165,6 +165,8 @@ GEM
     matrix (0.4.2)
     mini_mime (1.1.5)
     minitest (5.25.4)
+    mocha (2.7.1)
+      ruby2_keywords (>= 0.0.5)
     msgpack (1.7.5)
     net-imap (0.5.5)
       date
@@ -239,6 +241,10 @@ GEM
       activesupport (= 8.0.1)
       bundler (>= 1.15.0)
       railties (= 8.0.1)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.2.0)
       activesupport (>= 5.0.0)
       minitest
@@ -294,6 +300,7 @@ GEM
       rubocop-performance
       rubocop-rails
     ruby-progressbar (1.13.0)
+    ruby2_keywords (0.0.5)
     rubyzip (2.4.1)
     securerandom (0.4.1)
     selenium-webdriver (4.28.0)
@@ -386,11 +393,13 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kamal
+  mocha
   pg (~> 1.1)
   propshaft
   puma (>= 5.0)
   pundit
   rails (~> 8.0.1)
+  rails-controller-testing
   rubocop-rails-omakase
   selenium-webdriver
   solid_cable

@@ -2,7 +2,7 @@
   <h1 class="text-3xl font-semibold text-gray-800 mb-4 border-b pb-4"><%= @project.name %></h1>
   
   <p class="text-sm text-gray-500 mb-4">
-    <strong class="text-gray-700">Status:</strong> <%= @project.status.capitalize %>
+    <strong class="text-gray-700">Status:</strong> <%= @project.status&.capitalize %>
   </p>
 
   <!-- Status Change Dropdown -->
@@ -10,7 +10,7 @@
     <%= form_with model: @project, method: :patch, local: true do |form| %>
       <div class="flex items-center space-x-4">
         <label for="project_status" class="text-sm text-gray-700">Change Status:</label>
-        <%= form.select :status, Project.statuses.keys.map { |status| [status.capitalize, status] }, {}, 
+        <%= form.select :status, Project.statuses.keys.map { |status| [status&.capitalize, status] }, {}, 
             class: "w-48 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500" %>
         <%= form.submit "Update", class: "bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500" %>
       </div>

@@ -12,8 +12,9 @@ class ProjectsController < ApplicationController
 
   def update
     authorize @project, :change_status?
+    previous_status = @project.status
     if @project.update(project_params)
-      @project.comment_threads.create(user: current_user, comment: "Status changed to #{@project.status}")
+      @project.comment_threads.create(user: current_user, comment: "changed status from #{previous_status} to #{@project.status}")
       redirect_to @project, notice: 'Project updated.'
     else
       render :show
